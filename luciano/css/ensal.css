@@ -1,0 +1,138 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f9fc;
+}
+
+.sidebar {
+  width: 220px;
+  background: #fff;
+  border-right: 1px solid #eee;
+  padding: 20px;
+}
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+.sidebar ul {
+  list-style: none;
+}
+.sidebar li {
+  padding: 10px 0;
+  cursor: pointer;
+}
+.sidebar .active {
+  font-weight: bold;
+  color: #4f46e5;
+}
+.usuario {
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+main {
+  flex: 1;
+  padding: 30px;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.saludo {
+  font-size: 20px;
+}
+.kpis {
+  display: flex;
+  gap: 30px;
+}
+.kpis div {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.kpis p {
+  font-size: 12px;
+  color: #666;
+}
+.kpis span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.acciones {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.acciones input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 200px;
+  border-radius: 5px;
+}
+.btns button {
+  margin-left: 10px;
+  padding: 10px 12px;
+  background: #e0e7ff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.graficas {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.top-productos {
+  width: 200px;
+  text-align: center;
+}
+.top-productos .circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #0f172a;
+  margin: 10px auto;
+}
+
+.tabla-contenedor {
+  margin-top: 30px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+table th, table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+.salida {
+  color: #ef4444;
+}
+.entrada {
+  color: #10b981;
+}
+.devolucion {
+  color: #6366f1;
+}
+
+.paginacion {
+  margin-top: 10px;
+  text-align: cen
+}
