@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reporte de Entrada y Salida</title>
+  <link rel="stylesheet" href="/luciano/css/ensal.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- <aside class="sidebar">
+    <h2>INNOVASOF</h2>
+    <ul>
+      <li>🏠 Inicio</li>
+      <li>📦 Elementos</li>
+      <li>👤 Usuario</li>
+      <li class="active">📈 Reportes</li>
+      <li>🔔 Notificaciones</li>
+    </ul>
+    <div class="usuario">👤 Luciano <br><small>Admin</small></div>
+  </aside> -->
+
+  <main>
+    <header class="top-bar">
+      <div class="saludo">Hola ADMINISTRADOR 👋🏻</div>
+      <div class="kpis">
+        <div><p>Total Usuarios</p><span>344</span></div>
+        <div><p>Elementos</p><span>300</span></div>
+        <div><p>Activos Ahora</p><span>111</span></div>
+      </div>
+    </header>
+
+    <section class="contenido">
+      <h2>Reporte de Entrada y Salida</h2>
+      <div class="acciones">
+        <input type="text" placeholder="🔍 Search">
+        <div class="btns">
+          <button>⬇️ Descargar</button>
+          <button>🖨️ Imprimir</button>
+          <button>🗑️ Eliminar</button>
+        </div>
+      </div>
+
+      <div class="graficas">
+        <canvas id="barChart"></canvas>
+        <div class="top-productos">
+          <p>Top selling Products</p>
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="tabla-contenedor">
+        <h3>Alerta de Entrada y Salida</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Fecha de ingreso</th>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Ubicación</th>
+              <th>Tipo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>05/04/2025</td>
+              <td>Polo</td>
+              <td>25</td>
+              <td>A1</td>
+              <td class="salida">Salida</td>
+            </tr>
+            <tr>
+              <td>05/04/2025</td>
+              <td>Imac</td>
+              <td>5</td>
+              <td>B7</td>
+              <td class="entrada">Entrada</td>
+            </tr>
+            <tr>
+              <td>06/04/2025</td>
+              <td>PC HP</td>
+              <td>100</td>
+              <td>B7</td>
+              <td class="devolucion">Devolución</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="paginacion">◀️ 1 2 3 ▶️</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="proyecto/script.js"></script>
+</body>
+</html>
