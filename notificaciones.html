@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Notificaciones.css">
+</head>
+<body>
+
+        <section class="notificaciones">
+    <h2>NOTIFICACIONES</h2>
+
+    <!-- BUSCADOR Y PAGINADOR -->
+    <div class="top-bar">
+        <input type="text" placeholder="Buscar..." />
+        <select>
+            <option>Páginas</option>
+        </select>
+    </div>
+
+    <!-- MENSAJES NO LEÍDOS -->
+    <div class="grupo">
+        <h3>Mensajes no Leídos</h3>
+
+    <div class="item">
+        <div class="header" onclick="toggleContenido(this)">
+            Nueva notificación de Elementos
+            <span class="contador">2</span>
+        </div>
+        <div class="contenido">
+        <p>- Elemento 1 agregado.</p>
+        <p>- Elemento 2 actualizado.</p>
+        </div>
+    </div>
+
+        <div class="item">
+            <div class="header" onclick="toggleContenido(this)">
+            Nueva notificación de Usuarios
+            <span class="contador">3</span>
+        </div>
+        <div class="contenido">
+            <p>- Usuario Juan registrado.</p>
+            <p>- Usuario Ana modificado.</p>
+            <p>- Usuario eliminado.</p>
+        </div>
+        </div>
+
+        <div class="item">
+            <div class="header" onclick="toggleContenido(this)">
+            Nueva notificación de Reportes
+            <span class="contador">1</span>
+        </div>
+        <div class="contenido">
+            <p>- Se generó un nuevo reporte mensual.</p>
+        </div>
+        </div>
+    </div>
+
+    <!-- MENSAJES LEÍDOS -->
+    <div class="grupo">
+        <h3>Mensajes Leídos</h3>
+
+        <div class="item">
+            <div class="header" onclick="toggleContenido(this)">
+                Notificación de Reportes
+        </div>
+        <div class="contenido">
+            <p>- Reporte leído el 10/05/2025.</p>
+        </div>
+        </div>
+
+        <div class="item">
+        <div class="header" onclick="toggleContenido(this)">
+        Notificación de Elementos
+        </div>
+        <div class="contenido">
+        <p>- Elemento revisado el 09/05/2025.</p>
+        </div>
+        </div>
+        </div>
+
+    <!-- PAGINACIÓN -->
+    <div class="paginacion">
+    <button>&lt;</button>
+    <button class="activo">1</button>
+    <button>2</button>
+    <button>3</button>
+    <span>...</span>
+    <button>40</button>
+    <button>&gt;</button>
+    </div>
+</section>
+    
+</body>
+</html>
