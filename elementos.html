@@ -6,19 +6,19 @@
   <title>INNOVASOFT Usuarios</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2DhYVt1cV0XLXcV0QyV1zGzQnKxk5mR9pGp0WZrEO9jKHkHe9R/j0mTcZRy8lFh0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="styles.css">
+ <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <aside id="sidebar">
     <div>
       <div class="menu-header">
           <button id="toggleMenu">☰</button>
-      </div>
+       </div>
       <h2><span>INNOVASOFT</span></h2>
       <ul>
         <li><a href="#"><i class="fas fa-home"></i><span>INICIO</span></a></li>
-        <li><a href="elementos.html"><i class="fas fa-cubes"></i><span>ELEMENTOS</span></a></li>
-        <li><a href="#" class="active"><i class="fas fa-users"></i><span>USUARIOS</span></a></li>
+        <li><a href="#"><i class="fas fa-cubes"></i><span>ELEMENTOS</span></a></li>
+        <li><a href="index.html" class="active"><i class="fas fa-users"></i><span>USUARIOS</span></a></li>
         <li><a href="#"><i class="fas fa-chart-bar"></i><span>REPORTES</span></a></li>
         <li><a href="#"><i class="fas fa-bell"></i><span>NOTIFICACIONES</span></a></li>
       </ul>
@@ -37,7 +37,7 @@
 
   </aside>
   <main class="main" id="mainContent">
-    <h1>Hola Usuario 👋🏼</h1>
+    <h1>Hola Administrador 👋🏼</h1>
     <div class="stats">
       <div class="stat">
         <h3>100</h3>
@@ -56,27 +56,31 @@
     <div class="table-container">
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <input type="text" id="searchInput" placeholder="Buscar..." style="padding: 8px; border-radius: 8px; border: 1px solid #ccc;" />
-        <button class="editar" id="addMemberBtn">Añadir Miembros</button>
+        <button class="editar" id="addMemberBtn">Añadir Materiales</button>
       </div>
       <table id="membersTable">
         <thead>
           <tr>
-            <th>Nombres</th>
-            <th>Compañía</th>
-            <th># de Teléfono</th>
-            <th>Email</th>
-            <th>Ciudad</th>
+            <th>Código</th>
+            <th>Elemento</th>
+            <th>Categoría</th>
+            <th>Área</th>
+            <th>Ubicación</th>
+            <th>Encargado</th>
+            <th>Cantidad</th>
             <th>Estado</th>
             <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Wilson Martínez</td>
-            <td>SENA</td>
-            <td>(+57) 3224845447</td>
-            <td>Wils@sena.edu.co</td>
-            <td>Pitalito</td>
+            <td>3454</td>
+            <td>Laptop</td>
+            <td>No consumible</td>
+            <td>TICS</td>
+            <td>Bodega TICS</td>
+            <td>Wilson M.</td>
+            <td>5</td>
             <td><span class="status activo">Activo</span></td>
             <td>
               <button class="editar" onclick="editMember(this)">Editar</button>
@@ -84,11 +88,13 @@
             </td>
           </tr>
           <tr>
-            <td>Diego Calderón</td>
-            <td>SENA</td>
-            <td>(+57) 3243794837</td>
-            <td>diegoffd@sena.edu.co</td>
-            <td>Pitalito</td>
+            <td>6854</td>
+            <td>Lapiz</td>
+            <td>Consumible</td>
+            <td>TICS</td>
+            <td>Bodega TICS</td>
+            <td>Diego C.</td>
+            <td>20</td>
             <td><span class="status inactivo">Inactivo</span></td>
             <td>
               <button class="editar" onclick="editMember(this)">Editar</button>
@@ -96,11 +102,13 @@
             </td>
           </tr>
           <tr>
-            <td>Sebastián Ruiz</td>
-            <td>SENA</td>
-            <td>(+57) 3114574388</td>
-            <td>sebas@sena.edu.co</td>
-            <td>Pitalito</td>
+            <td>7654</td>
+            <td>Palas</td>
+            <td>Consumible</td>
+            <td>PAE</td>
+            <td>Bodega PAE</td>
+            <td>Vocero</td>
+            <td>10</td>
             <td><span class="status inactivo">Inactivo</span></td>
             <td>
               <button class="editar" onclick="editMember(this)">Editar</button>
@@ -108,11 +116,13 @@
             </td>
           </tr>
           <tr>
-            <td>Andrés Ballesteros</td>
-            <td>SENA</td>
-            <td>(+57) 3213575432</td>
-            <td>andre@sena.edu.co</td>
-            <td>Pitalito</td>
+            <td>6843</td>
+            <td>Mouse</td>
+            <td>Consumible</td>
+            <td>TICS</td>
+            <td>Bodega TICS</td>
+            <td>Jannier</td>
+            <td>3</td>
             <td><span class="status activo">Activo</span></td>
             <td>
               <button class="editar" onclick="editMember(this)">Editar</button>
@@ -141,30 +151,54 @@
   <div id="memberModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <h2 id="modalTitle">Añadir Miembro</h2>
+      <h2 id="modalTitle">Añadir Materiales</h2>
       <form id="memberForm">
         <div class="form-group">
-          <label for="name">Nombres:</label>
+          <label for="name">Código:</label>
           <input type="text" id="name" required>
         </div>
         <div class="form-group">
-          <label for="company">Compañía:</label>
+          <label for="company">Nombre:</label>
           <input type="text" id="company" required>
         </div>
         <div class="form-group">
-          <label for="phone"># de Teléfono:</label>
-          <input type="text" id="phone" required>
+          <label for="phone">Categoría:</label>
+        
+          <select id="status">
+            <option value="activo">Consumible</option>
+            <option value="inactivo">No consumible</option>
+          </select>
         </div>
         <div class="form-group">
-          <label for="email">Email:</label>
+          <label for="email">Área:</label>
           <input type="email" id="email" required>
         </div>
         <div class="form-group">
-          <label for="city">Ciudad:</label>
+          <label for="city">Lugar de almacenamiento:</label>
           <input type="text" id="city" required>
         </div>
         <div class="form-group">
-          <label for="status">Estado:</label>
+          <label for="encar">Encargado:</label>
+           <input type="text" id="city" required>
+        </div>
+        <div class="form-group">
+          <label for="city">¿Tiene fecha de caducidad?</label>
+           <select id="opcion" onchange="mostrarRespuesta()">
+            <option value="">Selecciona...</option>
+            <option value="primera">Si</option>
+            <option value="segunda">No</option>
+          </select>
+        </div>
+        <div id="respuesta" style="display: none; margin-top: 10px;">
+    <label for="city">Fecha de caducidad:</label>
+    <input type="city" id="respuestaInput" placeholder="Escribe tu respuesta">
+  </div>
+  <div class="form-group">
+          <label for="city">Cantidad:</label>
+          <input type="text" id="city" required>
+        </div>
+        <div class="form-group">
+          <label for="status">Estado :</label>
           <select id="status">
             <option value="activo">Activo</option>
             <option value="inactivo">Inactivo</option>
@@ -175,6 +209,6 @@
     </div>
   </div>
 <script src="script.js"></script>
-
+ 
 </body>
 </html>

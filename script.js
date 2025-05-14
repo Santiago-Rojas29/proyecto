@@ -90,3 +90,12 @@
         row.parentNode.removeChild(row);
       }
     }
+    function mostrarRespuesta() {
+      var seleccion = document.getElementById('opcion').value;
+      var respuestaDiv = document.getElementById('respuesta');
+      if (seleccion === 'primera') {
+        respuestaDiv.style.display = 'block';
+      } else {
+        respuestaDiv.style.display = 'none';
+      }
+    }
