@@ -4,181 +4,63 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>INNOVASOFT Usuarios</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2DhYVt1cV0XLXcV0QyV1zGzQnKxk5mR9pGp0WZrEO9jKHkHe9R/j0mTcZRy8lFh0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./Santiago/Notificaciones.css">
   
 </head>
 <body>
-  <aside id="sidebar">
+  <aside id="sidebar" class="sidebar">
     <div>
       <div class="menu-header">
           <button id="toggleMenu">☰</button>
       </div>
       <h2><span>INNOVASOFT</span></h2>
-      <ul>
-        <li><a href="#"><i class="fas fa-home"></i><span>INICIO</span></a></li>
-        <li><a href="elementos.html"><i class="fas fa-cubes"></i><span>ELEMENTOS</span></a></li>
-        <li><a href="#"><i class="fas fa-users"></i><span>USUARIOS</span></a></li>
-        <li><a href="#"><i class="fas fa-chart-bar"></i><span>REPORTES</span></a></li>
-        <li><a href="./Santiago/notificaciones.html"><i class="fas fa-bell"></i><span>NOTIFICACIONES</span></a></li>
-        
-        
-      </ul>
-    </div>
-  
-<div style="margin-top: 20px;">
+          <div class="nav-section">
+      <button class="nav-item" data-module="inicio">
+        <i class="fa fa-home"></i>
+        <span class="nav-text">Inicio</span>
+      </button>
 
-  <select id="userSelect" style="width: 100%; padding: 8px; margin-top: 8px; border-radius: 6px; border: 1px solid #ccc;">
-    <option value="victor">Victor L - Administrador</option>
-    <option value="andres"> Coordinador</option>
-    <option value="sebastian">Instructor</option>
-    <option value="diego">Usuario</option>
-  </select>
+      <div class="nav-group">
+        <button class="nav-item has-submenu">
+          <i class="fas fa-cubes"></i>
+          <span class="nav-text">Materiales</span>
+          <i class="fa fa-chevron-down submenu-icon"></i>
+        </button>
+        <div class="submenu">
+          <button class="submenu-item" data-module="entrada" id="submenu1"><i class="fas fa-door-closed"></i><span class="nav-text">Entradas</span></button>
+          <button class="submenu-item" data-module="salida" id="submenu2"><i class="fas fa-door-open"></i><span class="nav-text">Salidas</span></button>
+        </div>
+      </div>
+
+      <button class="nav-item" data-module="usuarios">
+        <i class="fa fa-users"></i>
+        <span class="nav-text">Usuarios</span>
+      </button>
+      <button class="nav-item" data-module="reportes" >
+        <i class="fas fa-chart-bar"></i>
+        <span class="nav-text">Reportes</span>
+      </button>
+      <button class="nav-item" data-module="notificaciones"  onclick="loadModule('Santiago/notificaciones.html')">
+        <i class="fas fa-bell"></i>
+        <span class="nav-text">Notificaciones</span>
+      </button>
+    </div>
+  </aside>
+  <!-- Contenido -->
+  <main id="content">
+  </main>
 </div>
 
-
-  </aside>
-  <main class="main" id="mainContent">
-    <h1>Hola Usuario 👋🏼</h1>
-    <div class="stats">
-      <div class="stat">
-        <h3>100</h3>
-        <p>Total clientes</p>
-      </div>
-      <div class="stat">
-        <h3>77</h3>
-        <p>Miembros</p>
-      </div>
-      <div class="stat">
-        <h3>23</h3>
-        <p>Activos ahora</p>
-      </div>
     </div>
-
-    <div class="table-container">
-      <div style="display: flex; justify-content: space-between; align-items: center;">
-        <input type="text" id="searchInput" placeholder="Buscar..." style="padding: 8px; border-radius: 8px; border: 1px solid #ccc;" />
-        <button class="editar" id="addMemberBtn">Añadir Miembros</button>
-      </div>
-      <table id="membersTable">
-        <thead>
-          <tr>
-            <th>Nombres</th>
-            <th>Compañía</th>
-            <th># de Teléfono</th>
-            <th>Email</th>
-            <th>Ciudad</th>
-            <th>Estado</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Wilson Martínez</td>
-            <td>SENA</td>
-            <td>(+57) 3224845447</td>
-            <td>Wils@sena.edu.co</td>
-            <td>Pitalito</td>
-            <td><span class="status activo">Activo</span></td>
-            <td>
-              <button class="editar" onclick="editMember(this)">Editar</button>
-              <button class="eliminar" onclick="deleteMember(this)">Eliminar</button>
-            </td>
-          </tr>
-          <tr>
-            <td>Diego Calderón</td>
-            <td>SENA</td>
-            <td>(+57) 3243794837</td>
-            <td>diegoffd@sena.edu.co</td>
-            <td>Pitalito</td>
-            <td><span class="status inactivo">Inactivo</span></td>
-            <td>
-              <button class="editar" onclick="editMember(this)">Editar</button>
-              <button class="eliminar" onclick="deleteMember(this)">Eliminar</button>
-            </td>
-          </tr>
-          <tr>
-            <td>Sebastián Ruiz</td>
-            <td>SENA</td>
-            <td>(+57) 3114574388</td>
-            <td>sebas@sena.edu.co</td>
-            <td>Pitalito</td>
-            <td><span class="status inactivo">Inactivo</span></td>
-            <td>
-              <button class="editar" onclick="editMember(this)">Editar</button>
-              <button class="eliminar" onclick="deleteMember(this)">Eliminar</button>
-            </td>
-          </tr>
-          <tr>
-            <td>Andrés Ballesteros</td>
-            <td>SENA</td>
-            <td>(+57) 3213575432</td>
-            <td>andre@sena.edu.co</td>
-            <td>Pitalito</td>
-            <td><span class="status activo">Activo</span></td>
-            <td>
-              <button class="editar" onclick="editMember(this)">Editar</button>
-              <button class="eliminar" onclick="deleteMember(this)">Eliminar</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="pagination">
-        <button>&laquo;</button>
-        <button class="active">1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>...</button>
-        <button>40</button>
-        <button>&raquo;</button>
-      </div>
-    </div>
-  </main>
-  <div class="footer">
-    Contactanos desde: Número Telefónico: (+57) 311 569 4209 | Correo Electrónico: InnovaSoft@gmail.com
-  </div>
-
-  <!-- Modal for adding/editing members -->
-  <div id="memberModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2 id="modalTitle">Añadir Miembro</h2>
-      <form id="memberForm">
-        <div class="form-group">
-          <label for="name">Nombres:</label>
-          <input type="text" id="name" required>
-        </div>
-        <div class="form-group">
-          <label for="company">Compañía:</label>
-          <input type="text" id="company" required>
-        </div>
-        <div class="form-group">
-          <label for="phone"># de Teléfono:</label>
-          <input type="text" id="phone" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" required>
-        </div>
-        <div class="form-group">
-          <label for="city">Ciudad:</label>
-          <input type="text" id="city" required>
-        </div>
-        <div class="form-group">
-          <label for="status">Estado:</label>
-          <select id="status">
-            <option value="activo">Activo</option>
-            <option value="inactivo">Inactivo</option>
-          </select>
-        </div>
-        <button type="submit">Guardar</button>
-      </form>
-    </div>
-  </div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
