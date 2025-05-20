@@ -71,12 +71,17 @@ function editMember(button) {
   document.getElementById('ubicacion').value = cells[4].textContent;
   document.getElementById('encargado').value = cells[5].textContent;
   document.getElementById('cantidad').value = cells[6].textContent;
-  const estadoClass = cells[7].querySelector('.status').classList.contains('activo') ? 'activo' : 'inactivo';
-  document.getElementById('estado').value = estadoClass;
+  
+  const estadoText = cells[7].textContent.toLowerCase();
+  document.getElementById('estado').value = estadoText === 'activo' ? 'activo' : 'inactivo';
 
+  const modal = document.getElementById('memberModal');
+  const modalTitle = document.getElementById('modalTitle');
   modalTitle.textContent = 'Editar Material';
   modal.style.display = 'block';
 }
+
+
 
 function deleteMember(button) {
   if (confirm('¿Estás seguro de que deseas eliminar este material?')) {

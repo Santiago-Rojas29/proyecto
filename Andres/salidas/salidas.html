@@ -27,7 +27,7 @@
     <div class="table-container">
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <input type="text" id="searchInput" placeholder="Buscar..." style="padding: 8px; border-radius: 8px; border: 1px solid #ccc;" />
-        <button class="editar" id="addMemberBtn">Añadir Materiales</button>
+        <button class="editar" id="addMemberBtn">Registrar Materiales</button>
       </div>
       <table id="membersTable">
         <thead>
@@ -37,6 +37,7 @@
             <th>Categoría</th>
             <th>Área</th>
             <th>Ubicación</th>
+            <th>Encargado</th>
             <th>Cantidad</th>
             <th>Estado</th>
             <th>Acciones</th>
@@ -61,7 +62,7 @@
   <div id="memberModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <h2 class="añadir" id="modalTitle">Añadir Materiales</h2>
+      <h2 class="añadir" id="modalTitle">Registrar Materiales</h2>
       <form id="memberForm">
         <div class="form-group">
           <label for="codigo">Código:</label>
@@ -81,6 +82,10 @@
         <div class="form-group">
           <label for="area">Área:</label>
           <input type="text" id="area" required>
+        </div>
+        <div class="form-group">
+          <label for="encargado">Encargado:</label>
+          <input type="text" id="encargado" required>
         </div>
         <div class="form-group">
           <label for="ubicacion">Lugar de almacenamiento:</label>
@@ -121,7 +126,7 @@
       </form>
     </div>
   </div>
-  <script src="../script.js"></script>
+  <script src="/js/salidas.js"></script>
   
     
   </body>
