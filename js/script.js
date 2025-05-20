@@ -32,12 +32,27 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Cargar contenido del módulo
-function loadModule(modulePath) {
-  return fetch(modulePath)
-    .then((response) => response.text())
-    .then((html) => {
-      document.getElementById("content").innerHTML = html;
+function loadModule(htmlPath, jsPath = null) {
+  fetch(htmlPath)
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('content').innerHTML = html;
+
+      if (jsPath) {
+        const script = document.createElement('script');
+        script.src = jsPath;
+        script.type = 'text/javascript';
+        script.onload = () => {
+          if (typeof window.initModule === 'function') {
+            window.initModule();
+          }
+        };
+        script.onerror = () => {
+          console.warn(`No se pudo cargar el script del módulo: ${jsPath}`);
+        };
+
+        document.body.appendChild(script);
+      }
     })
-    .catch((err) => console.warn("Algo salió mal al cargar el módulo.", err));
+    .catch(err => console.warn("Algo salió mal al cargar el módulo.", err));
 }
