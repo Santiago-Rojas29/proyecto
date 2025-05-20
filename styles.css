@@ -31,6 +31,8 @@ body {
   margin: 0;
   padding: 0.5rem 0;
   transition: opacity 0.3s ease, transform 0.3s ease;
+  
+  
 }
 #sidebar.sidebar-collapsed h2 {
   opacity: 0;
@@ -158,4 +160,48 @@ body {
   border: none;
   font-size: 24px;
   cursor: pointer;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-top: 1px solid #eee;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.username {
+  font-weight: bold;
+  color: #333;
+}
+
+.role {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.arrow {
+  font-size: 0.8rem;
+  color: #666;
+  margin-left: auto;
+}
+#sidebar.sidebar-collapsed .user-details,
+#sidebar.sidebar-collapsed .arrow {
+  display: none;
+}
+
+/* Centrar solo el avatar */
+#sidebar.sidebar-collapsed .user-info {
+  justify-content: center;
 }
