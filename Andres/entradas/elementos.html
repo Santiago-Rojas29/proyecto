@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="Elementos.css">
+</head>
+<body>
+    <main class="main" id="mainContent">
+    <h1>Hola Administrador 👋🏼</h1>
+    <div class="stats">
+      <div class="stat">
+        <h3>0</h3>
+        <p>Total Materiales</p>
+      </div>
+      <div class="stat">
+        <h3>77</h3>
+        <p>Miembros</p>
+      </div>
+      <div class="stat">
+        <h3>23</h3>
+        <p>Activos ahora</p>
+      </div>
+    </div>
+    <div class="table-container">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <input type="text" id="searchInput" placeholder="Buscar..." style="padding: 8px; border-radius: 8px; border: 1px solid #ccc;" />
+        <button class="editar" id="addMemberBtn">Añadir Materiales</button>
+      </div>
+      <table id="membersTable">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Elemento</th>
+            <th>Categoría</th>
+            <th>Área</th>
+            <th>Ubicación</th>
+            <th>Encargado</th>
+            <th>Cantidad</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="pagination">
+        <button>&laquo;</button>
+        <button class="active">1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>...</button>
+        <button>40</button>
+        <button>&raquo;</button>
+      </div>
+    </div>
+  </main>
+  <div class="footer">
+    Contáctanos desde: Número Telefónico: (+57) 311 569 4209 | Correo Electrónico: InnovaSoft@gmail.com
+  </div>
+  <div id="memberModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 class="añadir" id="modalTitle">Añadir Materiales</h2>
+      <form id="memberForm">
+        <div class="form-group">
+          <label for="codigo">Código:</label>
+          <input type="text" id="codigo" required>
+        </div>
+        <div class="form-group">
+          <label for="elemento">Elemento:</label>
+          <input type="text" id="elemento" required>
+        </div>
+        <div class="form-group">
+          <label for="categoria">Categoría:</label>
+          <select id="categoria">
+            <option value="Consumible">Consumible</option>
+            <option value="No consumible">No consumible</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="area">Área:</label>
+          <input type="text" id="area" required>
+        </div>
+        <div class="form-group">
+          <label for="ubicacion">Lugar de almacenamiento:</label>
+          <input type="text" id="ubicacion" required>
+        </div>
+        <div class="form-group">
+          <label for="encargado">Encargado:</label>
+          <input type="text" id="encargado" required>
+        </div>
+        <div class="form-group">
+          <label for="opcion">¿Tiene fecha de caducidad?</label>
+          <select id="opcion" onchange="mostrarRespuesta()">
+            <option value="">Selecciona...</option>
+            <option value="primera">Sí</option>
+            <option value="segunda">No</option>
+          </select>
+        </div>
+        <div id="respuesta" style="display: none; margin-top: 10px;">
+          <label for="caducidad">Fecha de caducidad:</label>
+          <input type="date" id="caducidad" placeholder="Selecciona una fecha">
+        </div>
+        <div class="form-group">
+          <label for="cantidad">Cantidad:</label>
+          <input type="number" id="cantidad" required>
+        </div>
+        <div class="form-group">
+          <label for="estado">Estado:</label>
+          <select id="estado">
+            <option value="activo">Activo</option>
+            <option value="inactivo">Inactivo</option>
+          </select>
+        </div>
+        <button type="submit">Guardar</button>
+      </form>
+    </div>
+  </div>
+  
+  <script src="../script.js"></script>
+
+  
+</body>
+</html>
+  
