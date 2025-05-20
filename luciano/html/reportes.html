@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INNOVASOFT Usuarios</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2DhYVt1cV0XLXcV0QyV1zGzQnKxk5mR9pGp0WZrEO9jKHkHe9R/j0mTcZRy8lFh0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/Proyecto/luciano/css/reportes.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+
+  <main class="main" id="mainContent">
+    <h1>Hola Usuario 👋🏼</h1>
+    <div class="stats">
+      <div class="stat">
+        <h3>100</h3>
+        <p>Total clientes</p>
+      </div>
+      <div class="stat">
+        <h3>77</h3>
+        <p>Miembros</p>
+      </div>
+      <div class="stat">
+        <h3>23</h3>
+        <p>Activos ahora</p>
+      </div>
+    </div>
+
+    <div class="container">
+
+  <!-- Botones -->
+  <div class="contenedor-botones" id="contenedor-botones">
+    <div id="boton-inventario" class="boton" onclick="mostrarSeccion('seccion-inventario')">
+      <svg class="icono" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path d="M15.232 5.232l3.536 3.536M9 11l6-6 3 3-6 6H9v-3z" stroke-width="2"/>
+      </svg>
+      <div class="etiqueta">Reporte de Inventario</div>
+    </div>
+
+    <div id="boton-entrada" class="boton" onclick="mostrarSeccion('seccion-entrada')">
+      <svg class="icono" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path d="M12 5v14m-6-6 6 6 6-6" stroke-width="2" />
+        <path d="M12 19V5m6 6-6-6-6 6" stroke-width="2" />
+      </svg>
+      <div class="etiqueta">Entrada y Salida</div>
+    </div>
+  </div>
+
+  <!-- Sección Inventario -->
+  <div id="seccion-inventario" class="seccion oculto">
+    <button onclick="volverInicio()" class="button">⬅ Volver</button>
+
+      <div class="report-section">
+        <div class="report-header">
+          <h2>Reporte de Inventario</h2>
+          <div class="report-actions">
+            <input type="text" placeholder=" Buscar">
+            <button class="button1"> Descargar</button>
+            <button class="button1"> Imprimir</button>
+            <button class="button1"> Eliminar</button>
+          </div>
+        </div>
+        <canvas id="inventoryChart" height="150"></canvas>
+      </div>
+
+      <div class="report-section">
+        <h3>Inventario</h3>
+        <table class="inventory-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Ubicación</th>
+              <th>Fecha de Ingreso</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>001</td><td>Pala</td><td>25</td><td>A1</td><td>03/04/2025</td></tr>
+            <tr><td>002</td><td>Imac</td><td>5</td><td>B7</td><td>06/04/2025</td></tr>
+            <tr><td>003</td><td>PC HP</td><td>10</td><td>B7</td><td>08/04/2025</td></tr>
+          </tbody>  
+        </table>
+      </div>
+
+      <div class="footer">
+        Contáctanos desde: <strong>+57 311 589 4102</strong> | Correo: <strong>Innovasof@gmail.com</strong>
+      </div>
+
+  </div>
+
+  <!-- Sección Entrada y Salida -->
+  <div id="seccion-entrada" class="seccion oculto">
+    <button onclick="volverInicio()" class="button">⬅ Volver</button>
+
+
+
+      <div class="report-section">
+        <div class="report-header">
+          <h2>Entrada Y Salida</h2>
+          <div class="report-actions">
+            <input type="text" placeholder="Buscar">
+            <button class="button1">Descargar</button>
+            <button class="button1">Imprimir</button>
+            <button class="button1">Eliminar</button>
+          </div>
+        </div>
+        <canvas id="movementChart" height="150"></canvas>
+      </div>
+
+      <div class="graficas">
+        <canvas id="barChart"></canvas>
+        <div class="top-productos">
+          <p>Top selling Products</p>
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="tabla-contenedor">
+        <h3>Alerta de Entrada y Salida</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Fecha de ingreso</th>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Ubicación</th>
+              <th>Tipo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>05/04/2025</td><td>Polo</td><td>25</td><td>A1</td><td class="salida">Salida</td></tr>
+            <tr><td>05/04/2025</td><td>Imac</td><td>5</td><td>B7</td><td class="entrada">Entrada</td></tr>
+            <tr><td>06/04/2025</td><td>PC HP</td><td>100</td><td>B7</td><td class="devolucion">Devolución</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+  </div>
+
+</div>
+
+
+  <div class="footer">
+    Contactanos desde: Número Telefónico: (+57) 311 569 4209 | Correo Electrónico: InnovaSoft@gmail.com
+  </div>
+
+<script src="/Proyecto/luciano/script.js"></script>
+
+</body>
+</html>
