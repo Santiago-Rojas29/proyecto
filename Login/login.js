@@ -5,7 +5,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     const pass = document.getElementById("contrasena").value;
 
     
-    if (user === "admin" && pass === "1234") {
+    if (user === "Santiago" && pass === "1234") {
         window.location.href = "../index.html";
     }
     else {

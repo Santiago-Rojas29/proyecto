@@ -100,7 +100,3 @@ function deleteMember(row) {
   }
 }
 
-// Inicializar todo cuando cargue la página
-window.addEventListener('DOMContentLoaded', () => {
-  initModule();
-});
